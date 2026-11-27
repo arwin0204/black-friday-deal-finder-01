@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DealHound — Black Friday &amp; Cyber Monday Deal Finder</title>
+<meta name="description" content="Real Black Friday and Cyber Monday deals, checked at the store on 27 Nov 2026. Search and filter by category, store and discount.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="wrap">
+    <p class="kicker">BLACK FRIDAY · 27 NOV 2026 — CYBER MONDAY · 30 NOV 2026</p>
+    <h1>DealHound</h1>
+    <p class="tagline">Sniffing out the real bargains — every price checked at the store today, with an honest verdict on whether it is really a deal.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="stats" id="stats" aria-label="Deal summary"></section>
+
+  <section class="picks" aria-label="Top picks">
+    <h2>Top 3 picks of the day</h2>
+    <div id="top-picks" class="pick-list"></div>
+  </section>
+
+  <section class="controls" aria-label="Find a deal">
+    <div class="search-row">
+      <label for="search">Search deals</label>
+      <input id="search" type="search" placeholder="Try “AirPods”, “OLED TV”, “Dyson”… " autocomplete="off">
+    </div>
+    <div id="category-chips" class="chips" role="group" aria-label="Category"></div>
+    <div class="filter-row">
+      <label>Store
+        <select id="store-filter"></select>
+      </label>
+      <label>Minimum discount
+        <select id="discount-filter">
+          <option value="0">Any discount</option>
+          <option value="20">20% off or more</option>
+          <option value="40">40% off or more</option>
+          <option value="50">50% off or more</option>
+        </select>
+      </label>
+      <label>Sort by
+        <select id="sort">
+          <option value="best">Best deal first</option>
+          <option value="discount">Biggest % off</option>
+          <option value="saving">Biggest $ saving</option>
+          <option value="price">Lowest price</option>
+        </select>
+      </label>
+      <label class="check"><input type="checkbox" id="new-lows-only"> New lows only</label>
+      <button type="button" id="clear-filters">Clear filters</button>
+    </div>
+    <p id="result-line" class="result-line" aria-live="polite"></p>
+  </section>
+
+  <section id="deal-grid" class="grid" aria-label="Deals"></section>
+
+  <section class="method" aria-label="How this site works">
+    <h2>How DealHound checks a deal</h2>
+    <p>Every deal on this page was found and checked by the maker on Black Friday, 27 November 2026, from the store's own page or a deals roundup that names the store. Each card shows the store, a link to the product at that store, the sale price, the usual price, the discount, the time the price was checked, and the source that reported it.</p>
+    <p>The verdict on each card is honest, not hype: <strong>NEW LOW</strong> means the lowest price ever tracked for that product; <strong>STRONG DEAL</strong> means a deep, genuine cut; <strong>GOOD DEAL</strong> means a fair saving; <strong>MODEST CUT</strong> means a small discount that is still the best available — the Switch 2 bundle, for example, is only 9% off, but it is the only console price cut of the whole season.</p>
+    <p id="checked-note"></p>
+    <p class="fineprint">DealHound is an independent finder and is not affiliated with Amazon, Best Buy, Walmart, Target, Disney+, or any brand shown here. Store names and product names belong to their owners. Links open the store in a new tab.</p>
+  </section>
+</main>
+
+<footer class="wrap">
+  <p>DealHound · Black Friday 2026 · Prices checked 27 Nov 2026, 13:40 WIB · Deals end Cyber Monday, 30 Nov 2026.</p>
+</footer>
+
+<script type="module" src="main.js"></script>
+</body>
+</html>

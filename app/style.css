@@ -1,0 +1,181 @@
+/* DealHound — a warm, high-contrast Black Friday look: near-black header,
+   amber accents, white cards on a pale warm grey page. System fonts only. */
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  background: #f4f1ea;
+  color: #1d1a16;
+  line-height: 1.45;
+}
+
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
+
+.masthead {
+  background: #16130f;
+  color: #fff;
+  padding: 28px 0 24px;
+  border-bottom: 5px solid #e8a100;
+}
+
+.kicker { margin: 0 0 6px; font-size: 12px; letter-spacing: 2px; color: #e8a100; font-weight: 700; }
+.masthead h1 { margin: 0; font-size: 44px; line-height: 1.05; letter-spacing: -1px; }
+.tagline { margin: 8px 0 0; color: #d8d2c6; max-width: 640px; font-size: 16px; }
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  margin: 18px 0;
+}
+.stat {
+  background: #fff;
+  border: 1px solid #ddd6c8;
+  border-radius: 10px;
+  padding: 12px 10px;
+  text-align: center;
+}
+.stat strong { display: block; font-size: 24px; color: #8a5c00; }
+.stat span { font-size: 12px; color: #6b6257; }
+
+.picks { margin: 4px 0 18px; }
+.picks h2, .method h2 { font-size: 20px; margin: 0 0 10px; }
+.pick-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.pick {
+  display: block;
+  background: #16130f;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+.pick-rank { color: #e8a100; font-weight: 800; font-size: 20px; }
+.pick-name { display: block; font-weight: 700; margin: 4px 0; }
+.pick-price { display: block; font-size: 15px; }
+.pick-price s { color: #b9b0a1; }
+.pick-price b { color: #e8a100; }
+.pick-store { font-size: 12px; color: #b9b0a1; }
+
+.controls {
+  background: #fff;
+  border: 1px solid #ddd6c8;
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 14px;
+}
+.search-row label { display: block; font-weight: 700; font-size: 13px; margin-bottom: 5px; }
+#search {
+  width: 100%;
+  font-size: 16px;
+  padding: 10px 12px;
+  border: 2px solid #c9c0ae;
+  border-radius: 8px;
+  background: #fffdf7;
+}
+#search:focus { outline: 3px solid #e8a100; border-color: #8a5c00; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0; }
+.chip {
+  border: 1px solid #c9c0ae;
+  background: #f4f1ea;
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 13px;
+  cursor: pointer;
+}
+.chip.active { background: #16130f; color: #fff; border-color: #16130f; }
+.filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: end;
+  font-size: 13px;
+  font-weight: 600;
+}
+.filter-row select {
+  display: block;
+  margin-top: 4px;
+  font-size: 14px;
+  padding: 7px 8px;
+  border: 1px solid #c9c0ae;
+  border-radius: 7px;
+  background: #fff;
+}
+.filter-row .check { display: flex; align-items: center; gap: 6px; padding-bottom: 8px; }
+#clear-filters {
+  padding: 8px 14px;
+  border-radius: 7px;
+  border: 1px solid #c9c0ae;
+  background: #f4f1ea;
+  cursor: pointer;
+  font-weight: 700;
+}
+.result-line { margin: 12px 0 0; font-size: 13px; color: #6b6257; }
+
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.card {
+  background: #fff;
+  border: 1px solid #ddd6c8;
+  border-radius: 12px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  scroll-margin-top: 12px;
+}
+.card-top { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.store { font-weight: 800; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; }
+.verdict { font-size: 11px; font-weight: 800; padding: 3px 7px; border-radius: 5px; white-space: nowrap; }
+.verdict-new-low { background: #0c6b2e; color: #fff; }
+.verdict-strong { background: #e8a100; color: #16130f; }
+.verdict-good { background: #dcefe2; color: #0c6b2e; }
+.verdict-modest { background: #e8e2d6; color: #5c5347; }
+.product { font-size: 17px; margin: 10px 0 2px; line-height: 1.3; }
+.category { margin: 0 0 10px; font-size: 12px; color: #6b6257; text-transform: uppercase; letter-spacing: 0.5px; }
+.prices { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+.sale { font-size: 26px; font-weight: 800; color: #8a5c00; }
+.usual { font-size: 15px; color: #6b6257; }
+.pct { font-size: 15px; font-weight: 800; color: #0c6b2e; }
+.saved { margin: 2px 0 8px; font-weight: 700; font-size: 14px; }
+.why, .evidence { font-size: 13px; margin: 0 0 6px; }
+.checked { font-size: 12px; color: #6b6257; margin: 0 0 10px; }
+.checked a, .method a { color: #8a5c00; }
+.cta {
+  margin-top: auto;
+  display: block;
+  text-align: center;
+  background: #16130f;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 10px;
+  border-radius: 8px;
+}
+.cta:hover { background: #8a5c00; }
+.empty { grid-column: 1 / -1; background: #fff; border: 1px solid #ddd6c8; border-radius: 12px; padding: 24px; text-align: center; }
+
+.method {
+  background: #fff;
+  border: 1px solid #ddd6c8;
+  border-radius: 12px;
+  padding: 18px;
+  margin: 22px 0;
+  font-size: 14px;
+}
+.method p { margin: 0 0 10px; }
+.fineprint { font-size: 12px; color: #6b6257; }
+
+footer { padding: 8px 16px 28px; font-size: 13px; color: #6b6257; }
+
+@media (max-width: 860px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+  .stats { grid-template-columns: repeat(3, 1fr); }
+  .pick-list { grid-template-columns: 1fr; }
+  .masthead h1 { font-size: 34px; }
+}
+@media (max-width: 560px) {
+  .grid { grid-template-columns: 1fr; }
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .filter-row { flex-direction: column; align-items: stretch; }
+  .filter-row select { width: 100%; }
+}
